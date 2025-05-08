@@ -8,7 +8,7 @@
 ![image alt](https://github.com/SixCreators/Kidney-Failure-rate-Prediction-in-ADPKD-people/blob/bdd88bdb364cc742225f56cc0127b9aa8f1a9844/ADPKD/img/adpkd%20result.png)
 
 # eGFR Claculator result
-![image alt](https://github.com/SixCreators/Kidney-Failure-rate-Prediction-in-ADPKD-people/blob/702f5ce862336fdc0829a7c906615bac3fcd6d0f/ADPKD/img/eGFR%20result.png)
+![image alt](https://github.com/SixCreators/ADPKD-through-Kidney-Failure-rate-Prediction/blob/35f7b4ca61c6a9aca9f6b513a287e23f8de89707/img/eGFR%20result.png)
 
 # Login 
 ![image alt](https://github.com/SixCreators/Kidney-Failure-rate-Prediction-in-ADPKD-people/blob/bdd88bdb364cc742225f56cc0127b9aa8f1a9844/ADPKD/img/login.png)
