@@ -1,0 +1,188 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="{% static 'IMG/Title_img/title_img.png' %}">
+    <meta http-equiv="X-UA-Compatibal" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Authentication</title>
+    <link rel="stylesheet" href="{% static 'css/registration.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <section class="register">
+
+        <div class="container">
+
+            <div class="superBox">
+
+                <div class="subBox">
+                    <h1>Welcome Back!</h1>
+                    <p>Already have an account?</p>
+                    <button class="btn" onclick="window.location.href='{% url 'login' %}';">Login</button>
+                </div>
+
+            </div>
+
+            <form onsubmit="return registerValidation()" method="post">
+                {% csrf_token %}
+
+                <div class="wrapper">
+
+                    <div class="heading">
+                        <h1>Register</h1>
+                    </div>
+
+                    <!-- User ID Section -->
+                    <div class="userId inputBox">
+
+                        <div class="rInput">
+                            <input type="text" name="Uid">
+                            <label class="_label_" for="UserName">User ID</label>
+                        </div>
+                        <!-- <i class='error bx bx-error-alt'></i> -->
+                        <i class="icon bx bx-user user-icon"></i>
+
+                    </div>
+
+                    <!-- First name section -->
+                    <div class="firstName inputBox">
+
+                        <div class="rInput">
+                            <input type="text" name="First_Name">
+                            <label class="_label_" for="FirstName">First Name</label>
+                        </div>
+                        <!-- <i class='error bx bx-error-alt'></i> -->
+                        <i class="icon bx bx-rename FName-icon"></i>
+                        
+                    </div>
+
+                    <!-- Last Name section -->
+                    <div class="lastName inputBox">
+
+                        <div class="rInput">
+                            <input type="text" name="Last_Name">
+                            <label class="_label_" for="LastName">Last Name</label>
+                        </div>
+                        <!-- <i class='error bx bx-error-alt'></i> -->
+                        <i class="icon bx bx-rename LName-icon"></i>
+
+                    </div>
+
+                    <!--  Gender & Date of Birth Section -->
+                    <div class="G-DoB-box">
+                        <!-- Gender section -->
+                        <div class="gender inputBox">
+
+                            <div class="rInput">
+                                <label for="Gender">Gender</label>
+                                <select name="Gender">
+                                    <option>Choose</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <!-- Date of Birth Section -->
+                        <div class="dateOfBirth inputBox">
+
+                            <div class="rInput">
+                                <label for="DateOfBirth">Date of Birth</label>
+                                <input type="date" name="Dob"class="dates" data-date-format="dd/mm/yyyy">
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Email input Section -->
+                    <div class="email inputBox">
+
+                        <div class="rInput">
+                            <input type="email" name="email">
+                            <label class="_label_" for="Email">Email</label>
+                        </div>
+                        <!-- <i class='error bx bx-error-alt'></i> -->
+                        <i class="icon bx bx-envelope email-icon"></i>
+
+                    </div>
+
+                    <!-- Country Code & Phone no Section -->
+                    <div class="C-PN-box">
+                        <!-- Country Code section -->
+                        <div class="country inputBox">
+
+                            <div class="rInput">
+                                <label for="Country">Country</label>
+                                    <select>
+                                        <option value="0">Choose</option>
+                                        <option value="India">IN +91</option>
+                                    </select>
+                            </div>
+
+                        </div>
+
+                        <!-- Phone no Section -->
+                        <div class="phoneNo inputBox">
+
+                            <div class="rInput">
+                                <input type="number" name="Ph_No">
+                                <label class="_label_" for="MobileNumber">Mobile Number</label>
+                            </div>
+                            <!-- <i class='error bx bx-error-alt'></i> -->
+                            <i class="icon bx bx-phone phone-icon"></i>
+
+                        </div>
+                    </div>
+
+                    <!-- password section -->
+                    <div class="password pass inputBox">
+                        
+                        <div class="rInput">
+                            <input type="password" name="Password">
+                            <label class="_label_" for="Password">Password</label>
+                            <i class='visible bx bxs-low-vision' ></i>
+                        </div>
+                        <!-- <i class='error bx bx-error-alt'></i> -->
+                        <i class="icon bx bx-lock lock-icon"></i>
+
+                    </div>
+
+                    <!-- confirm password section  -->
+                    <div class="confirmPassword pass inputBox">
+
+                        <div class="rInput">
+                            <input type="password"name="Confirm_Password">
+                            <label class="_label_" for="ConfirmPassword">Confirm Password</label>
+                            <i class='visible bx bxs-low-vision' ></i>
+                        </div>
+                        <!-- <i class='error bx bx-error-alt'></i> -->
+                        <i class="icon bx bx-lock lock-icon"></i>
+                        
+
+                    </div>
+
+                    <!-- check box 1 section  -->
+                    <div class="checkBox TC">
+                        <input type="checkbox">
+                        <span>I have read and agree to <br><a href="{% url 'terms_conditions' %}">terms & conditions</a></span>
+                    </div>
+
+                    <!-- check box 2 section -->
+                    <div class="checkBox PP">
+                        <input type="checkbox">
+                        <span>I have read and agree to <br><a href="{% url 'privacy_policy' %}">privacy policy</a></span>
+                    </div>
+
+                    <button class="submitBtn btn" type="submit">Submit</button>
+
+                </div>
+            </form>
+        </div>
+    </section>
+    <script src="{% static 'js/registration.js' %}"></script>
+</body>
+</html>

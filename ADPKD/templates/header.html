@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="{% static 'img/Title_Img/title_img.png' %}">
+    <meta http-equiv="X-UA-Compatibal" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Care Kidney</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+</head>
+
+<body>
+    <!-- header section start -->
+    <header class="_header_">
+        <!--This is used for logo image -->
+        <img src="{% static 'img/Header_IMG/logo.png' %}" class="logo" alt="CareKidney">
+
+        <!--This div used for header vertical box -->
+        <div class="header_vertical_box"></div>
+
+        <!--This div used for header top horizontal box-->
+        <div class="header_horizontal_top_box"></div>
+
+        <!--This is header nav bar section -->
+        <nav class="navbar">
+                <a class="_home h-btn" href="{% url 'home' %}">Home</a>
+				<a class="_egfr h-btn" href="{% url 'GFR' %}">eGFR</a>
+				<a class="_adpkd h-btn" href="{% url 'ADPKD' %}">ADPKD</a>
+                <a class="_blogs h-btn" href="{% url 'Blogs' %}">Blog</a>
+                <a class="_doctors h-btn" href="{% url 'Doctors' %}">Doctor's</a>
+				<a class="_about h-btn" href="{% url 'About_Us' %}">About</a>
+                <a class="_helpBot h-btn" href="{% url 'ChatBot' %}">HelpBot</a>
+        </nav>
+
+        <!-- This is header menu bar section -->
+        <div class="menu-container">
+            <div class="menu_bar">
+                <div class="line bar_1"></div>
+                <div class="line bar_2"></div>
+                <div class="line bar_3"></div>
+            </div>
+        </div>
+        <!-- User profile section in header -->
+        <div class="user_profile">
+            <div class="user_profile_img">
+                <a href="{% url 'profile' %}">
+                    {% if user.is_authenticated %}
+                    <img src="{% if profile and profile.profile_picture %}{{ profile.profile_picture.url }}
+                    {% elif profile.Gender == 'male' %}{% static 'img/Default_Img/Male_Default_Pic.png' %}
+                    {% else %}{% static 'img/Default_Img/Femal_Default_Pic.png' %}
+                    {% endif %}" alt="Profile Picture"style="
+                    width: 32px;
+                    height: 32px;
+                    position: absolute;
+                    border-radius: 50%;">
+                    {% endif %}
+                </a>
+            </div>
+        </div>
+        <!--This is header button section -->
+        <div class="header_btn">
+            {% if user.is_authenticated %}
+                <!-- Show Logout Button when the user is logged in -->
+                <a href="{% url 'logout' %}">
+                    <button class="header_logout_btn h-btn" type="button">Logout</button>
+                </a>
+            {% else %}
+                <!-- Show Login and Sign Up Buttons when the user is not logged in -->
+                <a href="{% url 'login' %}">
+                    <button class="header_log_in_btn h-btn" type="button">Log In</button>
+                </a>
+                <a href="{% url 'register' %}">
+                    <button class="header_sign_up_btn h-btn" type="button">Sign Up</button>
+                </a>
+            {% endif %}
+        </div>
+        
+    </header> 
+    <div class="header_horizontal_bottom_box"></div>
+
+    <!-- This div used for app-download -->
+    <div class="app-download">
+        <div class="app-name-img">
+            <img src="{% static 'img/Header_IMG/app_logo.png' %}" alt="#">
+            <p>Care Kidney</p>
+            <p>v2.01.04</p>
+        </div>
+        <div class="app-download-btn">
+            <i class="bx bx-download"></i>
+            <p>Download</p>
+        </div>
+    </div>
+    <!-- header section stop -->
+
+    <script src="{% static 'js/header.js' %}"></script>`    `
+</body>
+</html>

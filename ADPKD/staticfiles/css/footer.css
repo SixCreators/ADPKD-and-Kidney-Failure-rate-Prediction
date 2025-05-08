@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", Arial, sans-serif;
+} 
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+/* ------------------------------------------- footer section start -------------------------------------- */
+._footer_ {
+    width: 100vw; 
+    background-color: #000;
+}
+
+._footer_ ._a_ {
+    font-size: 13px;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+
+._footer_ ._a_::before {
+    content: "";
+    top: 100%;
+    width: 0;
+    height: 2px;
+    background: #41f0e7;;
+    transform: translate(0%, 80%);
+    transition-duration: 0.3s;
+    position: absolute;
+}
+
+
+._footer_ ._a_:hover::before {
+    width: 80%;
+}
+
+.top-footer {
+    color: #fff;
+    padding: 20px 20px 20px 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+    
+.footer-content {
+    width: 140px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.f-organization {
+    width: 110px;
+}
+
+.f-user-account {
+    width: 100px;
+}
+
+.f-about-us {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.f-about-us img {
+    width: 120px;
+    height: 70px;
+}
+
+.f-about-us p {
+    width: 100%;
+    height: 65px;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.f-about-us .f-social-icons {
+    margin-top: 10px;
+    font-size: 25px;
+}
+
+.f-about-us .f-social-icons a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.f-social-icons i:hover {
+    color: #41f0e7;
+    transform: translateY(2px);
+}
+
+.f-contact-us {
+    width: 200px;
+}
+
+.f-contact-us a {
+    font-size: 13px;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.f-contact-us .footer-icon {
+    font-size: 17px;
+}
+
+.f-contact-us .footer-icon-content {
+    top: -25px;
+    right: -25px;
+    width: 150px;
+    position: relative;
+}
+
+.f-contact-us .f-address {
+    width: 150px;
+}
+
+.footer-contact-form {
+    display: flex;
+    gap: 15px;
+    width: 250px;
+}
+
+.footer-contact-form .footer-from-content {
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+
+.footer-contact-form textarea  {
+    height: 50px;
+    padding: 5px 10px;
+    resize: none;
+}
+
+.footer-contact-form .f-c-submit-btn {
+    height: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+.footer-contact-form .f-c-submit-btn:hover {
+    background-color: #cf8516;
+    transform: translateY(2px);
+}
+
+
+.bottom-footer{
+    width: 100vw;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 13px;
+    background-color: #7c7a7a;
+}
+/* ------------------------------------------- footer section stop -------------------------------------- */

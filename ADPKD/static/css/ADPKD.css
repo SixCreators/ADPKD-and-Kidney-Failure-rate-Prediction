@@ -1,0 +1,271 @@
+/*==========================*\
+        Global section
+\*==========================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", Arial, sans-serif;
+} 
+html, body {
+    width: 100%;
+    height: 100%;
+}
+/*==========================*\
+    Header button section
+\*==========================*/
+._header_ .navbar a._adpkd {
+    color: #fff;
+    background: #0c89b3;
+    text-transform: uppercase;
+}
+/*==========================*\
+      ADPKD section Start
+\*==========================*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.logo-title-container {
+    margin: 20px 0 0 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.logo-title-container img {
+    width: 30px;
+    height: 30px;
+}
+
+#_hr {
+    height: 10px;
+    border: none;
+    margin: 0 15px;
+    background: #f3b94e;
+}
+
+.form-container {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px 50px;
+}
+
+.form-container form {
+    flex: 1 1 350px;
+    background: #fff;
+    border: 2px solid #18cbeb;
+    box-shadow: -2px -2px 2px 1px #cfcece;
+    text-align: center;
+    padding: 30px 50px;
+    border-radius: 8px;
+}
+
+.form-container form .heading h1{
+    color: #18cbeb;
+    border: 3px solid #18cbeb;
+    
+}
+
+.form-container form .iSec {
+    padding-top: 10px;
+}
+
+.form-container form .input-label {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.form-container form .input-control {
+    width: 60%;
+    border-radius: none;
+    border: 1px solid #18cbeb;
+    font-size: 20px;
+    /* box-shadow: -2px -2px 1px 1px #cfcece; */
+    color: black;
+    text-transform: none;
+    padding: 2px;
+}
+
+.form-container form .gend {
+    font-size: 16px;
+    color: #18cbeb;
+    padding: 4px 78px;
+    display: flex;
+    border-color: #18cbeb;
+    text-align: center;
+}
+
+.form-container form .famHist {
+    font-size: 16px;
+    color: #18cbeb;
+    padding: 4px 73px;
+    display: flex;
+    border-color: #18cbeb;
+    text-align: center;
+}
+
+.form-container form .getic {
+    font-size: 16px;
+    color: #18cbeb;
+    padding: 4px 73px;
+    display: flex;
+    border-color: #18cbeb;
+    text-align: center;
+}
+
+.form-container form .iBox {
+    margin: 15px 0;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* .form-container form .mb-3 span {
+    color: #fc0202;
+    display: none;
+} */
+
+.form-container form .btn-submit {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 5px 20px;
+    border: 2px solid #18cbeb;
+    border-radius: 8px;
+    box-shadow: -2px -2px 1px 1px #cfcece;
+    color: #18cbeb;
+    cursor: pointer;
+    font-size: 20px;
+    background: #fff;
+    transition: 0.5s;
+}
+
+.form-container form .btn-submit:hover {
+    color: #fff;
+    background: #18cbeb;
+    transform: translateY(2px);
+}
+
+.form-container .sideImg{
+    flex: 1 1 300px;
+}
+
+.form-container .sideImg img {
+    box-shadow: 0px 2px 2px 1px #cfcece;
+    width: 100%;
+}
+
+
+@media only screen and (max-width: 1100px) {
+    
+    .form-container form {
+        padding: 30px 40px;
+    }
+}
+
+@media only screen and (max-width: 980px) {
+    .form-container form .input-control {
+        width: 55%;
+    }
+
+    .form-container form {
+        padding: 30px 20px;
+    }
+}
+
+@media only screen and (max-width: 880px) {
+    .form-container form .input-control {
+        width: 45%;
+    }
+}
+
+@media only screen and (max-width: 795px) {
+    .form-container form {
+        padding: 30px 120px 30px 50px;
+    }
+}
+
+@media only screen and (max-width: 635px) {
+    .form-container form .gend {
+        padding: 6px 49px;
+    }
+
+    .form-container form .famHist {
+        padding: 6px 43px;
+    }
+    .form-container form .input-control {
+        width: 55%;
+    }
+
+    .form-container form select option {
+        font-size: 12px;
+        
+    }
+    .form-container form {
+        padding: 30px 50px;
+    }
+
+
+}
+
+@media only screen and (max-width: 560px) {
+    .form-container form {
+        padding: 20px 20px;
+    }
+
+    .form-container form .input-label {
+        font-size: 15px;
+        
+    }
+
+    .form-container form .gend {
+        padding: 6px 29px;
+    }
+
+    .form-container form .famHist {
+        padding: 6px 23px;
+    }
+
+    .form-container form .input-control {
+        font-size: 15px;
+    }
+
+    .form-container form .btn-submit {
+        padding: 3px 13px;
+    }
+
+    .form-container {
+        padding: 20px 10px;
+    }
+
+}
+
+@media only screen and (max-width: 450px) {
+
+    .form-container form .gend {
+        padding: 3px 0;
+    }
+
+    .form-container form .famHist {
+        padding: 3px 0;
+    }
+    
+    .form-container form .input-control {
+        width: 50%;
+    }
+}
+
+
+@media only screen and (max-width: 370px) {
+    .form-container form .input-control {
+        width: 45%;
+    }
+
+}
+

@@ -1,0 +1,757 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", Arial, sans-serif;
+    }
+
+html,body {
+    width: 100%;
+    height: 100%;
+    }
+
+/*--------------------------------------------------- header section START ----------------------------------------------------- */
+
+/*-_-_-_-_-_-_-_-_-_-_-  -_-_-_-_-_-_-_-_-_-_-*\
+            @ Main Header Section @
+\*-_-_-_-_-_-_-_-_-_-_-  -_-_-_-_-_-_-_-_-_-_-*/
+._header_ {
+    top: 0px;
+    width: 100vw;
+    height: 70px;
+    display: flex;
+    padding: 2px 10px;
+    list-style: none;
+    align-items: center;
+    justify-content: space-between;
+    }
+
+/* header logo section  */
+._header_ .logo {
+    top: 5px;
+    left: 2vw;
+    width: 120px;
+    height: 70px;
+    position: absolute;
+}
+/* header_vertical_box section */
+.header_vertical_box {
+    top:0;
+    left: 180px; /*27vmin*/
+    width: 60px; /* 8vmin*/
+    height: 70px; /*70px*/
+    transform: skew(130deg);
+    background: rgb(1,196,227);
+    background: linear-gradient(0deg, rgba(1,196,227,1) 0%, rgba(8,218,243,1) 48%, rgba(7,143,218,1) 100%);
+	position: absolute;		
+}
+
+/* header horizontal top box section  */
+.header_horizontal_top_box {
+    top: 0px;
+    left: 330px;/*330px or 52vmin*/
+    width: 65vw; /*900px or 65vw*/
+    height: 37px; /*6vmin*/
+    transform: skew(130deg);
+    background: rgb(1,196,227);
+    background: linear-gradient(90deg, rgba(1,196,227,1) 0%, rgba(80,218,243,1) 38%, rgba(7,143,218,1) 85%);
+    position: absolute;
+}
+
+
+
+
+
+/* ---------------------------------------- nav bar section START ---------------------------------------------------- */
+.navbar {
+    top: 18px;
+    left: 33vw;
+    width: 45.3vw;
+    height: 29px;
+    display: flex;
+    justify-content: space-between;
+    background: #e3e9eb;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+
+/* navbar element control section */
+.navbar a {
+    width: 80px;
+    height: 29px;
+    color: black;
+    padding: 7px;
+    border-radius: 0px;
+    text-align: center;
+    font-size: 12px;
+    text-decoration: none;
+    z-index: 1;
+    display: inline-block;
+    position: relative;
+}
+
+/* this section for nev bar animation */
+.navbar a:hover {
+    font-size: 12px;
+    color: #fff;
+    text-transform: uppercase;
+    background: #0c89b3;
+    text-decoration: none;
+    transition: 0.1s;
+}
+
+
+/* -------------------------------------------------------- nevbar section STOP ------------------------------------------------------- */
+
+/*  ------------------------------------------------------ menu bar section START ----------------------------------------------------- */
+/* this section for menu bar design */
+.menu_bar {
+    top: 25px;
+    left: 95vw;
+    width: 30px;
+    height: 20px;
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    overflow: hidden;
+}
+
+/* this section for menu bar all lines design */
+.menu_bar .line {
+    transition: all 0.4s linear;
+}
+
+/* this section for menu bar line 1 design */
+.bar_1 {
+    top: 0;
+    width: 25px;
+    height: 4px;
+    border-radius: 25px;
+    background-color: black;
+    position: absolute;
+}
+
+/* this section for menu bar line 2 design */
+.bar_2 {
+    top: 8px;
+    width: 16px;
+    height: 4px;
+    background-color: black;
+    position: absolute;
+}
+
+/* this section for menu bar line 3 design */
+.bar_3 {
+    top: 16px;
+    width: 25px;
+    height: 4px;
+    border-radius: 25px;
+    background-color: rgb(7, 172, 194);
+    position: absolute;
+}
+
+/* this section for menu bar line 1 animation */
+.menu-container.active .bar_1 {
+    top: 40%;
+    transform: rotate(45deg);
+}
+
+/* this section for menu bar line 2 animation */
+.menu-container.active .bar_2 {
+    top: 40%;
+    transform: translate(-100%);
+}
+
+/* this section for menu bar line 3 animation */
+.menu-container.active .bar_3 {
+    top: 40%;
+    transform: rotate(-45deg);
+}
+/*  ----------------------------------------------- menu bar section STOP  ------------------------------------------------ */
+
+/*  ----------------------------------------------- User profile section START  ------------------------------------------------ */
+.user_profile {
+    top: -15px;
+    right: 20px; /*95vw */
+    width: 32px;
+    height: 32px; 
+    position: relative;
+}
+
+.user_profile_img {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+}
+
+.user_profile_img a {
+    color: #888585;
+    text-decoration: none;
+}
+
+
+.user_profile i {
+    font-size: 32px;
+    cursor: pointer;
+    position: absolute;
+}
+
+
+/*  ----------------------------------------------- User profile section STOP  ------------------------------------------------ */
+
+/* ----------------------------------------------- header button section START ------------------------------------------------ */
+.header_btn {
+    top: 40px;
+    left: 87vw;
+    width: 160px;
+    height: 28px;
+    position: absolute;
+}
+
+/* log in button section */
+.header_log_in_btn {
+    
+    width: 75px;
+    height: 27px;
+    border: none;
+    color: rgb(231, 229, 229);
+    cursor: pointer;
+    padding: 4px 12px;
+    font-size: 12px;
+    border-radius: 12px;
+    background-color: #000;
+    transition: all 0.3s ease;
+    position: absolute;
+}
+
+/* sign up  button section */
+.header_sign_up_btn {
+    left: 78px;
+    width: 75px;
+    height: 27px;
+    border: none;
+    color: rgb(254, 255, 255);
+    cursor: pointer;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 12px;
+    background-color: #000;
+    transition: all 0.3s ease;
+    position: absolute;
+}
+
+/* Logout  button section */
+.header_logout_btn {
+    left: 78px;
+    width: 75px;
+    height: 27px;
+    border: none;
+    color: rgb(254, 255, 255);
+    cursor: pointer;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 12px;
+    background-color: #000;
+    transition: all 0.3s ease;
+    position: absolute;
+}
+
+/* log in & sign up  button design section */
+.header_log_in_btn:hover, .header_sign_up_btn:hover,.header_logout_btn {
+    font-size: 12px;
+    text-transform: uppercase;
+    background: #19b1b6;
+    transition: 0s;
+    transform: translateY(2px);
+}
+/* --------------------------------------------- Log in & Sign up button section STOP ------------------------------------------------  */
+
+/* header horizontal bottom box section */
+.header_horizontal_bottom_box {
+    top: 69.5px;
+    width: 100vw; /*1365px*/
+    height: 8px;
+    background: rgb(1,196,227);
+    background: linear-gradient(90deg, rgba(1,196,227,1) 8%, rgba(80,218,243,1) 38%, rgba(7,143,218,1) 85%);
+    position: absolute;
+}
+/* -------------------------------------- app download design section --------------------------- */
+ .app-download {
+    top: 78px;
+    width: 100vw;
+    gap: 20px;
+    padding: 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #000000;
+    position: absolute;
+    
+}
+
+.app-name-img {
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    gap: 7px;
+    font-weight: 600;
+}
+.app-name-img img {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5);
+}
+
+.app-download-btn {
+    width: 120px;
+    height: 28px;
+    font-size: 12px;
+    padding: 10px;
+    font-weight: 600;
+    border: 1px solid #666;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #30dbe0;
+    text-align: center;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5);
+    transition: all 0.5s ease;
+}
+
+.app-download-btn:hover {
+    background-color: #e99d2b;
+    transform: translateY(2px);
+}
+
+.app-download-btn p {
+    margin-left: 10px;
+}
+
+/* ---------------------------------------------------------- media section START --------------------------------------------------------- */
+@media only screen and (max-width: 1200px) {
+
+    .header_horizontal_top_box {
+        width: 61vw;
+    }
+
+    .header_btn {
+        left: 85.5vw;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+
+    .header_horizontal_top_box {
+        width: 58vw; 
+    }
+
+    .header_btn {
+        
+        left: 84vw;
+    } 
+}
+
+@media only screen and (max-width: 992px) {
+
+    ._header_ .logo {
+        top: 5px;
+        width: 108px;
+        height: 63px;
+    }
+
+    .header_vertical_box {
+        left: 162px;
+        width: 54px;
+    }
+
+    .header_horizontal_top_box {
+        left: 297px;
+        width: 56vw;
+    }
+   
+    .navbar {
+        left: 35vw;
+    }
+
+    .header_btn {
+
+        left: 82vw;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+
+    .header_horizontal_top_box {
+        width: 49vw;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .navbar a {
+        width: 100%;
+    }
+
+    .menu_bar {
+        left: 92vw;
+        display: block;
+    }
+
+    .shownav_bar.navbar {
+        top: 78px;
+        left: 65vw;
+        height: 60vh;
+        width: 35vw;
+        padding: 0 2vw 10vw 2vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        backdrop-filter: blur(10px);
+        position: absolute;
+    }
+
+    .user_profile {
+        display: none;
+    }
+
+    .header_btn {
+        display: none;
+    }
+
+    .showheader_btn.header_btn  {
+        top: 65vh;
+        left: 74vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: transparent;
+        position: absolute;
+    }
+    .header_logout_btn {
+    left: 4vw;
+    bottom: 20px;
+    width: 70px;
+    height: 25px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    ._header_ .logo {
+        width: 102px;
+        height: 59px;
+    }
+
+    .header_vertical_box {
+        left: 151px;
+        width: 51px;
+    }
+
+    .header_horizontal_top_box {
+        left: 281px;
+        width: 47vw;
+    }
+
+    .menu_bar{
+        top: 20px;
+        left:93vw;
+    }
+    .bar_1 {
+        width: 20px;
+        height: 3px;
+        border-radius: 20px;
+    }
+    .bar_2 {
+        width: 13px;
+        height: 3px;
+    }
+    .bar_3 {
+        width: 20px;
+        height: 3px;
+        border-radius: 20px;
+    }
+
+    .shownav_bar.navbar {
+        top: 73px;
+    }
+
+    .showheader_btn.header_btn  {
+        top: 64vh;
+
+    }
+
+    .header_horizontal_bottom_box {
+        top: 65px;
+    }
+
+    .app-download {
+        top: 73px;
+    }
+}
+
+@media only screen and (max-width: 700px) { 
+    .header_vertical_box {
+        left: 151px;
+        width: 50px;
+        height: 65px;
+    }
+    
+    .header_horizontal_top_box {
+        left: 274px;
+        width: 40vw;
+    }
+
+    .showheader_btn.header_btn  {
+        top: 64vh;
+        /* left: 70vw; */
+        left: calc(97.5vw - 170px );
+    }
+    .header_logout_btn {
+    left: 4.3vw;
+    bottom: 10px;
+    width: 70px;
+    height: 25px;
+    }
+
+}
+
+@media only screen and (max-width: 600px) { 
+    ._header_ .logo {
+        top: 8px;
+        width: 89px;
+        height: 52px;
+    }
+
+    .header_vertical_box {
+        left: 135px;
+        width: 45px;
+        height: 60px;
+    }
+
+    .header_horizontal_top_box {
+        left: 243px;
+        width: 37vw;
+    }
+
+    .menu_bar{
+        top: 20px;
+        left:91vw;
+    }
+    .bar_1 {
+        width: 20px;
+        height: 3px;
+        border-radius: 20px;
+    }
+    .bar_2 {
+        width: 13px;
+        height: 3px;
+    }
+    .bar_3 {
+        width: 20px;
+        height: 3px;
+        border-radius: 20px;
+    }
+
+    .shownav_bar.navbar {
+        top: 68px;
+    }
+
+    .showheader_btn.header_btn  {
+        /* left: 66vw; */
+        left: calc(99vw - 170px );
+    }
+
+    .header_horizontal_bottom_box {
+        top: 60px;
+    } 
+
+    .app-download {
+        top: 68px;
+    }
+    .app-download-btn {
+        font-size: 12px;
+        width: 100px;
+        height: 25px;
+    }
+    .app-name-img {
+        font-size: 12px;
+    }
+    .app-name-img img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    ._header_ .logo {
+        top: 5px;
+        width: 84px;
+        height: 49px; 
+    }
+    
+    .header_vertical_box {
+        left: 126px;
+        width: 42px;
+        height: 60px;
+    }
+    
+    .header_horizontal_top_box {
+        left: 231px;
+        width: 26vw;
+    }
+
+     
+    .menu_bar{
+        top: 20px;
+        left:87vw;
+    }
+
+    .shownav_bar.navbar {
+        padding: 0 2vw 20vw 2vw;
+    }
+
+    .showheader_btn.header_btn  {
+        top: 60vh;
+        flex-direction: column;
+        left: 68vw;
+    }
+    .header_btn .header_log_in_btn {
+        left: 30px;
+    }
+    .header_btn .header_sign_up_btn {
+        left: 30px;
+    }
+
+    .header_sign_up_btn {
+        top: 30px;
+        left: 42px; 
+    }
+    .header_logout_btn {
+    left: 6vw;
+    bottom: 10px;
+    width: 70px;
+    height: 25px;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    ._header_ .logo {
+        top: 5px;
+        width: 79px;
+        height: 46px;
+    }
+    
+    .header_vertical_box {
+        left: 117px;
+        width: 39px;
+        height: 55px;
+    }
+    
+    .header_horizontal_top_box {
+        left: 215px;
+        width: 23vw;
+    }
+     
+    .menu_bar{
+        top: 18px;
+        left:88vw;
+    }
+
+    .shownav_bar.navbar {
+        top: 63px;
+    }
+    .header_horizontal_bottom_box {
+        top: 55px;
+    }
+    .app-download {
+        top: 63px;
+    }
+    .header_btn .header_log_in_btn {
+        left: 25px;
+    }
+    .header_btn .header_sign_up_btn {
+        left: 25px;
+    }
+
+
+}
+
+@media only screen and (max-width: 370px) {
+    .header_horizontal_top_box {
+        left: 206px;
+        width: 15vw;
+    }
+    .header_btn .header_log_in_btn {
+        left: 10px;
+    }
+    .header_btn .header_sign_up_btn {
+        left: 10px;
+    }
+
+}
+
+@media only screen and (max-width: 320px) {
+    ._header_ .logo {
+        width: 72px;
+        height: 42px;
+    }
+    
+    .header_vertical_box {
+        left: 108px;
+        width: 36px;
+        height: 55px;
+    }
+    
+    .header_horizontal_top_box {
+        left: 198px;
+        width: 15vw;
+    }
+
+    .menu_bar{
+        top: 18px;
+        left:88vw;
+    }
+    .bar_1 {
+        width: 18px;
+        height: 3px;
+        border-radius: 18px;
+    }
+    .bar_2 {
+        width: 10px;
+        height: 3px;
+    }
+    .bar_3 {
+        width: 18px;
+        height: 3px;
+        border-radius: 18px;
+    }
+    .header_btn .header_log_in_btn {
+        left: 5px;
+    }
+    .header_btn .header_sign_up_btn {
+        left: 5px;
+    }
+
+    
+}
+/* ---------------------------------------------------------- media section STOP --------------------------------------------------------- */
+
+/* -------------------------------------------------- header section STOP ----------------------------------------------------  */
+
+
+
+
+
+

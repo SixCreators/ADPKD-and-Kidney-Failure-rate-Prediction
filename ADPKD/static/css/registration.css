@@ -1,0 +1,341 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", Arial, sans-serif;
+    }
+body {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: #bebebe;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+
+
+/*-_-_-_-_-_-_-_-_-_-_-  -_-_-_-_-_-_-_-_-_-_-*\
+            @ Registration Section @
+\*-_-_-_-_-_-_-_-_-_-_-  -_-_-_-_-_-_-_-_-_-_-*/
+
+.container {
+    width: 70vw;
+    background-color: #fff;
+    display: flex;
+    justify-content: end;
+    border-radius: 30px;
+    overflow: hidden;
+}
+.container a {
+    text-decoration: none;
+}
+.container .superBox {
+    width: 100%;
+    display: flex;
+    border-top-right-radius: 14vw;
+    border-bottom-right-radius: 14vw;
+    justify-content: center;
+    align-items: center;
+    background-color: #660934;
+}
+.superBox .subBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.superBox .subBox h1 {
+    color: #fff;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.superBox .subBox p {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.container .wrapper {
+    width: 37vw;
+    padding-top: 2vw;
+    display: flex;
+    gap: 0.3vw;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.container .wrapper .inputBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.container .wrapper .rInput  {
+    display: flex;
+    margin-right: 5px;
+    gap: 0.1vw;
+    flex-direction: column;
+}
+
+.container .wrapper .heading {
+    color: #660934;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.rInput input {
+    width: 22vw;
+    font-size: 15px;
+    /* margin-right: 5px; */
+    padding: 4px  30px 4px 10px;
+    border: none;
+    border-bottom: 1px solid #d8d4d4;
+    /* border-radius: 10px; */
+}
+
+.phoneNo .rInput input {
+    width: 14vw;  
+}
+
+.rInput label {
+    color: #bfbfbf;
+    margin-left: 2px;
+    font-size: 14px;
+}
+
+
+.inputBox .icon {
+    color: #bfbfbf;
+    font-size: 20px;
+    margin-top: -20px;
+}
+
+
+.container .wrapper .G-DoB-box {
+    top: -15px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 1.2vw;
+}
+
+.dateOfBirth .rInput input {
+    width: 11vw;
+}
+
+.container .wrapper .C-PN-box {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    
+}
+
+.country {
+    margin-top: -32px;
+    
+}
+
+.country select {
+    width: 7vw;
+}
+
+
+
+.gender select, .country select {
+    color: #000;
+    padding: 4px  2.2vw 4px 2.2vw;
+    cursor: pointer;
+}
+
+.dateOfBirth input {
+    color: #000;
+
+}
+
+.checkBox {
+    font-size: 13px;
+}
+
+.checkBox input {
+    cursor: pointer;
+}
+
+.checkBox.PP {
+    margin-left: -29px;
+} 
+
+.btn {
+    color: #fff;
+    margin: 10px;
+    padding: 8px 50px;
+    border: none;
+    font-weight: 600;
+    border-radius: 10px;
+    font-size: 19px;
+    background-color: #fa5089;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn:hover {
+    color: #000;
+    transform: translateY(2px);
+    background-color: #e0a708;
+}
+
+.subBox .btn  {
+    border: 2px solid #fff;
+    background-color: transparent;
+    width: 170px;
+}
+
+.subBox .btn:hover {
+    background-color: #e0a708;
+}
+
+.rInput ._label_ {
+    position: relative;
+    bottom: 23px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.rInput input:focus ~ ._label_,
+.rInput input:user-valid ~ ._label_ {
+    transform: translateY(-20px);
+    color: black;
+}
+
+
+.inputBox .visible {
+    position: absolute;
+    margin-top: 3px;
+    margin-left: 20vw;
+    color: #bfbfbf;
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width: 950px){
+    .container{
+        width: 95vw;
+    }
+
+    .container .superBox {
+        width: 100%;
+    }  
+    .container .wrapper {
+        width: 50vw;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .container{
+        height: 98vh;
+    }
+    .container .wrapper {
+        width: 60vw;
+    }
+    .container .superBox {
+        width: 50%;
+    } 
+    .superBox .subBox h1{
+        font-size: 30px;
+    }
+    .superBox .subBox p {
+        font-size: 15px;
+    }
+    .subBox .btn {
+        width: 140px;
+        padding: 8px 30px;
+    }
+
+    .rInput input {
+        width: 30vw;
+    }
+    .inputBox .visible {
+    margin-left: 27vw;
+    }
+    .checkBox {
+        font-size: 13px;
+    }
+    
+}
+
+@media only screen and (max-width: 500px) {
+    .container {
+    justify-content: center;
+    flex-direction: column;
+    }
+    .container .superBox {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 14vw;
+    border-bottom-right-radius: 14vw;
+    justify-content: center;
+    align-items: center;
+    background-color: #660934;
+    }
+    .superBox .subBox h1{
+        font-size: 22px;
+    }
+    .superBox .subBox p {
+        font-size: 13px;
+    }
+    .subBox .btn {
+        width: 110px;
+        font-size: 13px;
+        padding: 5px 20px;
+    }
+    .container .wrapper .heading {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .btn{
+        margin: 5px;
+        padding: 5px 40px;
+        border-radius: 8px;
+        font-size: 15px;
+    }
+    .container .wrapper {
+        width:100%;
+    }
+    .rInput input {
+        width: 50vw;
+    }
+    .inputBox .visible {
+        margin-left: 46vw;
+    }
+    .checkBox span a {
+        margin-left: 20px;
+    }
+    .checkBox {
+        font-size: 10px;
+    }
+
+    .dateOfBirth .rInput input {
+        width: 25vw;
+    }
+    .phoneNo .rInput input {
+        width: 40vw;  
+    }
+
+}

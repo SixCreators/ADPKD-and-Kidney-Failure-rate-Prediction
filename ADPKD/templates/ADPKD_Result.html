@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="{% static 'img/Title_Img/title_img.png'' %}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADPKD Result</title>
+    <link rel="stylesheet" href="{% static 'css/ADPKD_Result.css' %}">
+</head>
+{% include 'header.html' %}
+<br><br>
+<body>
+    
+    <section>
+        <div class="container">
+            <div class="wrapper">
+                <div class="imgTxtGraph">
+                    <div class="imgTxt">
+                        <div class="imgSec">
+                            <!-- Stages Section -->
+                            {% if stage %}
+                            <div class="stage StgColor" style="background-color: {{ stage.color }};">
+                                <h2>{{ stage.stage }}</h2>
+                            </div>
+                            <!-- Stages Image Section -->
+                            <div class="imgResultBox StgColor" style="background-color: {{ stage.color }};">
+                                {% if stage.image %}
+                                    <img class="stageImg one" src="{{ stage.image }}" alt="Stage Image">
+                                {% else %}
+                                    <p>No Image Available</p>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                        </div>
+
+                        <!-- Stages Text Section -->
+                        <div class="txtSec">
+                            {% if stage %}
+                            <div>
+                                <div class="stageHeading">
+                                    <h1>{{ stage.heading }}</h1>
+                                </div>
+                                <div class="userIn">
+                                    <p class="stageTitle">Title: <span>{{ stage.title }}</span></p>
+                                    <p class="SCr">SC Level: <span class="SCrSpan">{{ serum_creatinine }}</span> mg/dL</p>
+                                    <p class="kidneySize">Kidney Size: <span class="kidneySizeSpan">{{ kidney_size }}</span> cm</p>
+                                    <p class="BP">Blood Pressure: <span class="BPSpan">{{ blood_pressure }}</span> mmHg</p>
+                                    <p class="GFR">GFR Value: <span class="GFRSpan">{{ GFR_Value }}</span> mL/min</p>
+                                    <p class="genetic">Genetic: <span class="geneticSpan">{{ Input_genetics }}</span></p>
+                                    <p class="previousResult">Previous Result: <span>None</span></p>
+                                </div>
+
+                                <div class="currentResult StgColor"style="background-color: {{ stage.color }};">
+                                    <h4>Kidney Failure Risk: <span>{{ predicted_data }}%</span></h4>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <!-- line Chart section -->
+                    <div class="graph">
+                        <canvas id="predictionChart" width="800" height="400"></canvas>
+                        
+                    </div>
+                </div>
+
+
+                <!-- Circle Chart Section -->
+                <div class="cirCharts">
+                    <div class="cirOne cirBox">
+                        <div class="cirText">
+                            <h3>ADPKD Risk</h3>
+                            <p class="age">Age: <span class="ageSpan">{{ age }}</span> years</p>
+                            <p class="cysts">Cysts: <span class="cystsSpan">{{ cysts }}</span></p>
+                            <p class="SCr">SCr: <span>{{ serum_creatinine }}</span> mg/dL</p>
+                            <p class="BP">BP: <span>{{ blood_pressure }}</span> mmHg</p>
+                            <p class="kidSize">Kidney Size: <span>{{ kidney_size }}</span> cm</p>
+                            <p class="ADPKDRisk">ADPKD Risk: <span>{{ ADPKD_Risk }}%</span></p> <!-- ✅ Risk added -->
+                            <p class="famHist">Family History of ADPKD: <span class="famHistSpan">{{ Family_History }}</span></p>
+                        </div>
+                        <div class="cirbar">
+                            <div class="circle one" data-color="#3beedf">
+                                <p class="number">{{ ADPKD_Risk }}<span>%</span></p> <!-- ✅ Risk inside the circle -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cirTwo cirBox">
+                        <div class="cirText">
+                            <h3>Blood Pressure</h3>
+                            <p class="age">Age: <span>{{ age }}</span> years</p>
+                            <p class="gender">Gender: <span class="genderSpan">{{ gender }}</span></p>
+                            <p class="BP">BP: <span>{{ blood_pressure }}</span> mmHg</p>
+                            <p class="highBP">BP: <span>{{ BP_Status }}</span></p>
+                            <p class="normal">Normal: <span>{{ Normal_BP }}</span> mmHg</p>
+                        </div>
+                        <div class="cirbar">
+                            <div class="circle one" data-color="#3beedf">
+                                <p class="number">{{ BP_Status|floatformat:0}}<span>%</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cirThree cirBox">
+                        <div class="cirText">
+                            <h3>Kidney Function</h3>
+                            <p class="age">Age: <span>{{ age }}</span> years</p>
+                            <p class="gender">Gender: <span>{{ gender }}</span></p>
+                            <p class="SCr">SCr: <span>{{ serum_creatinine }}</span> mg/dL</p>
+                            <p class="eGFR">eGFR: <span>{{ GFR_Value }}</span> mL/min</p>
+                            <p class="normal">Normal: <span>>90</span> mL/min</p>
+                        </div>
+                        <div class="cirbar">
+                            <div class="circle one" data-color="#3beedf">
+                                {% if kidney_function_percentage is not None %}
+                                <p class="number">{{ kidney_function_percentage|floatformat:0}}<span>%</span></p>
+                                {% else %}
+                                <p class="number">Invalid</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- How to Manage Stages -->
+                <div class="manageSec">
+                    <h3>What to Do?</h3>
+                    <ol>
+                        {% for stage in stages %}
+                            <li class="mangHeading">{{ stage.title }}</li>
+                            <ul>
+                                {% if stage.get_details %}
+                                    {% for detail in stage.get_details %}
+                                        <li>{{ detail }}</li>
+                                    {% endfor %}
+                                {% else %}
+                                    <li>No details available</li>
+                                {% endif %}
+                            </ul>
+                        {% endfor %}
+                    </ol>
+                </div>
+            
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="application/json" id="graphData">
+        {{ graph_data|safe }}
+    </script>
+    <script src="{% static 'js/ADPKD_Result.js' %}"></script>
+    {% include 'footer.html' %}
+</body>
+</html>

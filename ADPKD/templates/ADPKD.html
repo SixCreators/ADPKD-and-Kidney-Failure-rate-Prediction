@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatibal" content="IE=edge">
+    <link rel="shortcut icon" type="x-icon" href="{% static 'img/Title_Img/title_img.png' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Care Kidney ADPKD</title>
+    <link rel="stylesheet" href="{% static 'css/ADPKD.css' %}">
+</head>
+{% include 'header.html' %}
+<br><br>
+<body>
+    <!-- Logo and Title Container -->
+    <div class="logo-title-container">
+        <img src="{% static 'img/ADPKD_Img/ADPKD_Shape_img.png' %}" alt="Logo" class="logo"> <!-- Replace with your actual logo path -->
+        <h1 class="form-title">ADPKD</h1>
+    </div> 
+    <hr id="_hr">
+    
+    <section>
+
+        <div class="form-container">
+
+            <form method="Post" action="">
+                {% csrf_token %}
+
+                <div class="wrapper">
+
+                    <div class="heading">
+                        <h1>ADPKD DISEASE PREDICTION</h1>
+                    </div>
+
+                    <div class="iSec">
+
+                        <!-- Number of Cysts -->
+                        <div class="cystsCount iBox">
+                            <label for="Number of Cysts" class="input-label">Number of Cysts: <span>*</span></label>
+                            <input type="number" name="cysts" class="input-control"  min="0" max="200"placeholder="" required>
+                        </div>
+
+                        <!-- age -->
+                        <div class="age iBox">
+                            <label for="Age" class="input-label">Age: <span>*</span></label>
+                            <input type="number" name="age" class="input-control"  min="18" max="100" placeholder="" required>
+                        </div>
+
+                        <!-- gender -->
+                        <div class="gender iBox">
+                            <label for="Gender" class="input-label">Gender: <span>*</span></label>
+                            <select name="gen" name="gen" id="selOpt" class="input-control gend" required>
+                                <option value="Choose">Choose</option>
+                                <option value="Female">Female</option>
+                                <option value="Male">Male</option>
+                            </select>
+                        </div>
+
+                        <!-- Family History of ADPKD -->
+                        <div class="famHistADPKD iBox">
+                            <label for="Family History of ADPKD" class="input-label">Family History of : <span>*</span> <br>(ADPKD)</label>
+                            <select name="famHistADPKD" id="selOpt" class="input-control famHist" width="40px" required>
+                                <option value="Choose">Choose</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+						
+						<!-- Diabetes -->
+                        <div class="famHistADPKD iBox">
+                            <label for="Family History of ADPKD" class="input-label">Diabetes:<span>*</span></label>
+                            <select name="Diabetes" name="Diabetes" id="selOpt" class="input-control famHist" width="40px" required>
+                                <option value="Choose">Choose</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+
+                        <!-- Genetics of ADPKD -->
+                        <div class="geneticADPKD iBox">
+                            <label for="Genetic of ADPKD" class="input-label">Genetics : <span>*</span></label>
+                            <select name="geneticADPKD" id="selOpt" class="input-control getic" width="40px" required>
+                                <option value="Choose">Choose</option>
+                                <option value="pkd1">PKD1</option>
+                                <option value="pkd2">PKD2</option>
+                                <!--<option value="none">None</option>-->
+                            </select>
+                        </div>
+
+                        <!-- Kidney Size(cm) -->
+                        <div class="kidneySize iBox">
+                            <label for="Kidney Size(cm)" class="input-label">Kidney Size: <span>*</span><br>(cm)</label>
+                            <input type="number" name="kidney_size" class="input-control" step="0.001"  min="3" max="35"placeholder="" required>
+                        </div>
+
+                        <!-- Blood Pressure -->
+                        <div class="bloodPressure iBox">
+                            <label for="Blood Pressure(mmHg)" class="input-label">Blood Pressure: <span>*</span><br>(mmHg)</label>
+                            <input type="number" name="blood_pressure" class="input-control" min="60" max="140" placeholder="" required>
+                        </div>
+
+                        <!-- Serum Creatinine(mg/dL) -->
+                        <div class="SCr iBox">
+                            <label for="Serum Creatinine(mg/dL)" class="input-label">Serum Creatinine: <span>*</span><br>(mg/dL)</label>
+                            <input type="number" name="serum_creatinine" class="input-control" step="0.001"  min="0" max="140"placeholder="" required>
+                        </div>
+						<!-- GFR Value(mg/dL) -->
+                        <div class="SCr iBox">
+                            <label for="GFR(mg/dL)" class="input-label">gfr: <span>*</span><br>(mg/dL)</label>
+                            <input type="number" name="gfr" class="input-control" min="1" max="400" placeholder="" required>
+                        </div>
+
+                        <!-- submit -->
+                         <div class="submitBtn">
+                            <button type="submit" class="btn btn-submit">Submit</button>
+                         </div>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+            <div class="sideImg">
+                <img src="{% static 'img/ADPKD_Img/adpkdPage.webp' %}" alt="#">
+            </div>
+
+        </div>
+
+    </section>
+    <script src="{% static 'js/ADPKD.js' %}"></script>
+    {% include 'footer.html' %}
+</body>
+</html>

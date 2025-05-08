@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatibal" content="IE=edge">
+    <link rel="shortcut icon" type="x-icon" href="{% static 'img/Title_Img/title_img.png' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareKidneyAbout</title>
+    <link rel="stylesheet" href="{% static 'css/About.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+{% include 'header.html' %}
+<br><br>
+<body>
+    <section class="about">
+        <h4 class="_h4_">About Us</h4>
+        {% for data in about_us_data %}
+        <div class="main">
+            <img src="{{ data.Abus_TP_Img.url }}" alt="#">
+            <div class="all-text">
+                <h1>{{ data.First_Hedding }}</h1>
+                <p>{{ data.First_Paragraph|safe }}</p>
+                <div class="about-btn">
+                    <button type="button">Our Team</button>
+                    <button type="button">More..</button>
+                </div>
+            </div>
+        </div>
+        <div class="our-focus">
+            <h4 class="_h4_">{{ data.Second_Headding }}</h4>
+            <div class="focus-text">
+                <p>{{ data.Second_Paragraph|safe }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+<div class="team-section">
+    <div class="team-details">
+        <div class="icon">
+            {% for member in team_members %}
+            <div class="img-box img-box-{{ forloop.counter }}"
+            style="--i:{{ forloop.counter }};"
+            data-id="member-content-details-{{ forloop.counter }}">
+            <img src="{{ member.profile_picture.url }}" alt="{{ member.name }}">
+        </div>
+        {% endfor %}
+    </div>
+    {% for member in team_members %}
+    <div class="team-content members {% if forloop.first %}active{% endif %}"
+    id="member-content-details-{{ forloop.counter }}">
+    <div class="imgBX">
+        <img src="{{ member.profile_picture.url }}" alt="{{ member.name }}">
+    </div>
+</div>
+{% endfor %}
+</div>
+<div class="team-member-content">
+    {% for member in team_members %}
+    <div class="memberBx members {% if forloop.first %}active{% endif %}"
+    id="member-content-bio-{{ forloop.counter }}">
+    <h2>{{ member.name }}<br><span>{{ member.occupation }}</span></h2>
+    <p>{{ member.bio }}</p>
+    <div class="social-icon">
+        {% if member.github %}<a href="{{ member.github }}"><i class="bx bxl-github"></i></a>{% endif %}
+        {% if member.linkedin %}<a href="{{ member.linkedin }}"><i class='bx bxl-linkedin-square'></i></a>{% endif %}
+        {% if member.twitter %}<a href="{{ member.twitter }}"><i class="bx bxl-twitter"></i></a>{% endif %}
+        {% if member.facebook %}<a href="{{ member.facebook }}"><i class='bx bxl-facebook-square'></i></a>{% endif %}
+    </div>
+</div>
+{% empty %}
+<p>No team members found.</p>
+{% endfor %}
+</div>
+</div>
+<script src="{% static 'js/About.js' %}"></script>
+{% include 'footer.html' %}
+</body>
+</html>

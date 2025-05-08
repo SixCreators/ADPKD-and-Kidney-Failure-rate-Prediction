@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatibal" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" type="x-icon" href="img/Title_Img/title_img.png">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+</head>
+
+<body>
+  
+  <div class="div1"></div><!----------------------------------------- footer section ---------------------------------------->
+  <footer class="_footer_" >
+    <div class="top-footer">
+      <div class="f-about-us footer-content">
+        <img class="footer-logo" src="{% static 'IMG/Footer IMG/logo.png' %}" alt="#">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus molestias quisquam, similique nisi quibusdam consequuntur.</p>
+
+        <div class="f-social-icons">
+          <a href="#"><i class="bx brands bxl-github"></i></a>
+          <a href="#"><i class="bx brands bxl-linkedin"></i></a>
+          <a href="#"><i class="bx brands bxl-google"></i></a>
+          <a href="#"><i class="bx brands bxl-facebook"></i></a>
+          <a href="#"><i class="bx brands bxl-twitter"></i></a>
+          <a href="#"><i class="bx brands bxl-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="f-organization footer-content">
+        <h4>Organization</h4>
+        <a class="_a_" href="#">Home</a>
+        <a class="_a_" href="#">Our Services</a>
+        <a class="_a_" href="#">Blogs</a>
+        <a class="_a_" href="#">News</a>
+      </div>
+
+      <div class="f-user-account footer-content">
+        <h4>Account</h4>
+        <a class="_a_" href="#">Profile</a>
+        <a class="_a_" href="#">My account</a>
+        <a class="_a_" href="#">Log out</a>
+      </div>
+
+      <div class="f-support footer-content">
+        <h4>Support</h4>
+        <a class="_a_" href="#">FAQ</a>
+        <a class="_a_" href="#">Private Policy</a>
+        <a class="_a_" href="#">Help</a>
+        <a class="_a_" href="#">Terms & Conditions</a>
+      </div>
+
+      <div class="f-contact-us footer-content">
+        <h4>Contact Us</h4>
+        <i class="footer-icon bx bx-phone"></i>
+        <a class=" f-phone-no footer-icon-content" href="#">+123-456-7890</a>
+        <i class="footer-icon bx bx-envelope"></i>
+        <a class=" f-email footer-icon-content" href="#">info@carekidney.org</a>
+        <i class="footer-icon bx bx-map"></i>
+        <a class=" f-address footer-icon-content" href="https://maps.app.goo.gl/AduGypt8WYMNHyCR7">383V+HQ6, Siromonipur, Bishnupur, West Bengal, 722122</a> 
+      </div>
+      <div class="footer-contact-form footer-content">
+        <h4>Send us a message</h4>
+        <form method="post">
+          {% csrf_token %}
+          <input class="f-c-name footer-from-content" type="text" name="full_name" placeholder="Full Name" required>
+          <input class="f-c-email footer-from-content" type="email" name="email" placeholder="E-mail" required>
+          <textarea class="f-c-customer-text" cols="30" name="message" placeholder="Describe why you contact us?" required></textarea>
+          <button class="f-c-submit-btn" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="bottom-footer">
+      <p>Copyright <i class="bx bx-copyright"></i> 2025 Care Kidney. All Right Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="{% static 'js/footer.js' %}"></script>
+</body>
+</html>

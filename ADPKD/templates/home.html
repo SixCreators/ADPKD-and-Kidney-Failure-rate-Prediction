@@ -1,0 +1,164 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatibal" content="IE=edge">
+  <link rel="shortcut icon" type="x-icon" href="{% static 'img/Title_Img/title_img.png' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Care Kidney</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+{% include 'header.html' %}
+<body>
+  <!-- Preloader box (Loading animation) -->
+  <div id="preloader"></div>
+
+  <!-- Contain full home section -->
+  <section class="home">
+    <!-- home container without footer-->
+    <div class="container">
+      <!-- home top section -->
+      <div class="home-top-container">
+        <!-- text, icon and see more button section -->
+        <div class="home-top-content">
+          <div>
+            <h1>Hi, <span class="show-fast-name">
+              {% if user.is_authenticated %}
+              {{ user.first_name|default:user.username }}
+              {% else %}
+              Guest
+              {% endif %}
+            </span></h1>
+            {% for htc in HTC %}
+            <h3>{{htc.title}} <span id="changing-text"></span></h3>
+          </div>
+          <p>{{htc.description}}</b></p>
+          {% endfor %}
+          <!-- home top social icons -->
+          <div class="social-icon">
+            <a href="#"><i class="bx bxl-facebook-square"></i></a>
+            <a href="#"><i class="bx bxl-linkedin-square"></i></a>
+            <a href="#"><i class="bx bxl-github"></i></a>
+            <a href="#"><i class="bx bxl-instagram"></i></a>
+            <a href="#"><i class="bx bxl-twitter"></i></a>
+            
+          </div>
+          <!-- home top more button -->
+          <a href="#" class="home-top-btn">See More.</a>
+        </div>
+        <!-- home top image -->
+        <div class="home-top-img">
+          {% for hti in HTI %}
+          <img src="{{hti.Home_Top_images.url}}" alt="#">
+          {% endfor %}
+        </div>
+      </div>
+      <!-- card section  -->
+      <div class="service-card">
+        <div class="card-btn previous"><i class='slider-btn bx bxs-chevron-left'></i></div>
+        <div class="card-btn next"><i class='slider-btn bx bxs-chevron-right'></i></div>
+        {% for CS in Card_Section %}
+            <div class="s-card">
+                {% if CS.Card_images and CS.Card_images.url %}
+                    <a href="#" target="_blank">
+                        <img src="{{ CS.Card_images.url }}" alt="{{ CS.Card_Name }}">
+                    </a>
+                {% else %}
+                    <a href="#" target="_blank">
+                      <i class='cms-icon bx bx-list-ul'></i>
+                    </a>
+                {% endif %}
+                <p><a href="#" target="_blank">{{ CS.Card_Name }}</a></p>
+            </div>
+        {% endfor %}
+    </div>
+{% for KA in kidney_anatomy %}
+<!-- home about kidney section -->
+<div class="home-kidney-anatomy-container container-in-home">
+  <h2>{{ KA.title }}</h2>
+  <!-- content of kidney-anatomy -->
+  <div class="home-kidney-anatomy content-box">
+    <p>{{KA.description}}</p>
+    <img src="{{ KA.Kidney_Anatomy_image.url }}" alt="{{ KA.title }}">
+  </div>
+</div>
+{% endfor %}  
+      <!-- home kidney-blood-flow section -->
+      {% for KB_Flow in kb_flow %}
+      <div class="home-kidney-blood-flow-container container-in-home">
+        <h2>{{ KB_Flow.title }}</h2>
+        <div class="home-kidney-blood-flow content-box">
+          <img src="{{ KB_Flow.kbf_images.url }}" alt="{{ KB_Flow.title }}">
+          <!-- content of kidney-blood-flow -->
+          <p>{{KB_Flow.description}}</p>
+        </div>
+      </div>
+      {% endfor %}
+      <!-- home healthy & diseased Kidney section -->
+      {% for HKVSDK in hkvsdk %}
+      <div class="home-healthy-diseased-Kidney-container container-in-home">
+        <h2>{{ HKVSDK.title }}</h2>
+        <div class="home-healthy-diseased-Kidney content-box">
+          <!-- content of healthy & diseased-Kidney -->
+          <p>{{HKVSDK.description}}</p>
+          <img src="{{ HKVSDK.HKVSDK_images.url }}" alt="#">
+        </div>
+      </div>
+      {% endfor %}
+      <!-- home chronic kidney disease(ckd) section -->
+      {% for CKD in ckd %}
+      <div class="home-chronic-kidney-disease-container container-in-home">
+        <h2>{{ CKD.title }}</h2>
+        <div class="chronic-kidney-disease content-box">
+          <img src="{{ CKD.CKD_images.url }}" alt="{{ CKD.title }}">
+          <p class="chronic-kidney-disease">{{CKD.description}}</p>
+        </div>
+      </div>
+      {% endfor %}
+      <!-- home polycystic kidney disease section -->
+      {% for PKD in pkd %}
+      <div class="home-polycystic-kidney-disease-container container-in-home">
+        <h2>{{ PKD.title }}</h2>
+        <div class="polycystic-kidney-disease content-box ">
+          <div>
+            <p>{{PKD.description|safe}}</p>
+          </div>
+          <img src="{{ PKD.PKD_images.url }}" alt="{{ PKD.title }}">
+        </div>
+      </div>
+      {% endfor %}
+<!-- Slider Section -->
+<div class="organization-logo-slider">
+  <div class="slider-wrapper">
+    {% for SS in Slide_Section %}
+    <div class="items">
+      <img src="{{ SS.SI_images.url }}" alt="Slide Image">
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<div class="content-reference">
+  <h2 class="Reference">Reference</h2>
+  <hr>
+  {% for ref in reference %}
+  <p>{{ref.Paragraph}} <a href="{{ref.websiteLink}}">{{ref.Check_Orginal}}</a> on {{ref.created_date}}</p>
+  {% endfor %}
+</div>
+</div>
+</section>
+<script src="{% static 'js/home.js' %}"></script>
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script>
+  var typed = new Typed("#changing-text", {
+    strings:['CARE YOU', 'CARE YOUR FAMILY', 'CARE YOUR KIDNEYS', 'CARE YOUR FAMILY KIDNEYS'],
+    typeSpeed:100,
+    backSpeed:100,
+    loop :true
+})
+</script>
+{% include 'footer.html' %}
+</body>
+</html>

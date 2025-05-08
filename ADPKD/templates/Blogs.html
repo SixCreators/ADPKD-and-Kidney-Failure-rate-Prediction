@@ -1,0 +1,207 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatibal" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Care Kidney Blogs</title>
+        <meta name="title" content="Care Kidney">
+        <meta name="description" content="Your kidneys are two bean-shaped organs that filter
+        your blood to remove waste and harmful elements. And our website help to you monitor
+        your kidney condition through eGFR Calculator, ADPKD Prediction, etc.">
+        <!--title img-->
+        <link rel="shortcut icon" type="x-icon" href="{% static 'img/Title_Img/title_img.png' %}">
+        <!--custom css link-->
+        <link rel="stylesheet" href="{% static 'css/Blogs.css' %}">
+    </head>
+    {% include 'header.html' %}
+    <br><br>
+    <body>
+        <main>
+            <article>
+                <!--@ Hero @-->
+                <section class="section hero" aria-label="home">
+                    <div class="container">
+                        <h1 class="h1_ hero-title">
+                            <strong class="strong_">Hey, Blogers.</strong>These all Blogs for education and health purpose.
+                        </h1>
+                        <div class="wrapper">
+                            <form action="" class="newsletter-form">
+                                <input type="email" name="email_address" placeholder="Your e-mail address" class="email-field">
+                                <button type="submit" class="btn subscribe-btn">Subscribe</button>
+                                <p class="newsletter-text">Get the email newsletter and unlock access to members-only containt and updates</p>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+<!--Featured post-->
+<section class="section featured" aria-label="featured post">
+    <div class="container">
+        <h2>
+            <strong> Best Stories</strong>
+        </h2>
+        <p class="section-subtitle">
+            Get started with our <strong class="strong_"> best stories</strong>
+        </p>
+        <ul class="has-scrollbar">
+            {% for post in posts %}
+            <li class="scrollbar-item">
+                <div class="blog-card">
+                    <figure class="card-banner img-holder" style="--width: 500; --height: 600;">
+                        <img src="{{ post.image.url }}" width="500" height="600" alt="{{ post.title }}" loading="lazy" class="img-cover">
+                        <ul class="avatar-list absolute">
+                            {% for author in post.authors.all %}
+                            <li class="avatar-item">
+                                <a href="#" class="avatar img-holder" style="--width: 100; --height: 100;">
+                                    <img src="{{ author.profile_picture.url }}" width="100" height="100" alt="{{ author.name }}" loading="lazy" class="img-cover">
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </figure>
+                    <div class="card-content">
+                        <ul class="card-meta-list">
+                            {% for category in post.categories.all %}
+                            <li>
+                                <p class="card-tag">{{ category.name }}</p>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        <h3 class="h4">
+                            <a href="{{ post.post_url }}" class="card-title hover:underline">
+                                {{ post.title }}
+                            </a>
+                        </h3>
+                        <p class="card-text">
+                            {{ post.description }}
+                        </p>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+<!--Recent post-->
+<section class="section recent" aria-label="recent blog posts">
+    <div class="container">
+        <div class="title-wrapper">
+            <h2 class="h2_ section-title">
+                See what we've <strong class="strong_">published recently</strong>
+            </h2>
+            <div class="top-writer">
+                <ul class="avatar-list">
+                    {% for writer in top_writers %}
+                    <li class="avatar-item">
+                        <a href="#" class="avatar large img-holder" style="--width: 100; --height: 100;">
+                            {% if writer.avatar %}
+                            <img src="{{ writer.avatar.url }}" width="100" height="100" alt="{{ writer.full_name }}" class="img-cover">
+                            {% else %}
+                            <img src="{% static 'img/Default_Img/Default_Avater.jpg' %}" width="100" height="100" alt="Default Avatar" class="img-cover">
+                            {% endif %}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <span class="span_">Meet our top writers</span>
+            </div>
+        </div>
+        <ul class="grid-list">
+            {% for blog in blogs %}
+            <li>
+                <div class="blog-card">
+                    <figure class="card-banner img-holder" style="--width: 550; --height: 660;">
+                        {% if blog.thumbnail %}
+                        <img src="{{ blog.thumbnail.url }}" width="550" height="660" alt="{{ blog.headline }}" class="img-cover">
+                        {% else %}
+                        <img src="{% static 'img/Default_Img/Thamlin_img.jpg' %}" width="550" height="660" alt="Default Image" class="img-cover">
+                        {% endif %}
+                        <ul class="avatar-list absolute">
+                            {% for writer in blog.writers.all %}
+                            <li class="avatar-item">
+                                <a href="#" class="avatar img-holder" style="--width: 100; --height: 100;">
+                                    <img src="{{ writer.avatar.url }}" width="100" height="100" alt="{{ writer.full_name }}" class="img-cover">
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </figure>
+                    <div class="card-content">
+                        <ul class="card-meta-list">
+                            {% for topic in blog.topics.all %}
+                            <li>
+                                <p class="card-tag">{{ topic.title }}</p>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        <h3 class="h4">
+                            <a href="{{ blog.source_link }}" class="card-title hover:underline">
+                                {{ blog.headline }}
+                            </a>
+                        </h3>
+                        <p class="card-text">
+                            {{ blog.description|truncatewords:30 }}
+                        </p>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+        <button class="btn">Load more</button>
+    </div>
+</section>
+<!-- Recommended post-->
+<section class="section recommended" aria-label="recommended post">
+    <div class="container">
+        <p class="section-subtitle">
+            <strong class="strong_">Recommended</strong>
+        </p>
+        <ul class="grid-list">
+            {% for article in articles %}
+            <li>
+                <div class="blog-card">
+                    <figure class="card-banner img-holder" style="--width: 300; --height: 360;">
+                        {% if article.article_image %}
+                        <img src="{{ article.article_image.url }}" width="300" height="360" alt="{{ article.title }}" loading="lazy" class="img-cover">
+                        {% endif %}
+                        <ul class="avatar-list absolute">
+                            {% for expert in article.experts.all %}
+                            <li class="avatar-item">
+                                <a href="#" class="avatar img-holder" style="--width: 100; --height: 100;">
+                                    {% if expert.profile_image %}
+                                    <img src="{{ expert.profile_image.url }}" width="100" height="100" alt="{{ expert.full_name }}" loading="lazy" class="img-cover">
+                                    {% endif %}
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </figure>
+                    <div class="card-content">
+                        <h3 class="h5">
+                            <a href="{{ article.article_link }}" class="card-title hover:underline">{{ article.title }}</a>
+                        </h3>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+<!--NewsLetter-->
+<section class="section newsletter">
+    <h2 class="h2_ section-title">
+        Subscribe to <strong class="strong_">new post</strong>
+    </h2>
+    <form action="#" class="newsletter-form">
+        <input type="email" placeholder="Your email address" class="email-field" required>
+        <button type="submit" class="btn subscribe-btn">Subscribe</button>
+    </form>
+</section>
+</article>
+</main>
+<!--custom js link-->
+<script src="{% static 'js/Blogs.js' %}"></script>
+{% include 'footer.html' %}
+</body>
+</html>

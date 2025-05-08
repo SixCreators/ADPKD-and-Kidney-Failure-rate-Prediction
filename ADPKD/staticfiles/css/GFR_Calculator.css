@@ -1,0 +1,235 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", Arial, sans-serif;
+} 
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+.logo-title-container {
+    margin: 20px 0 0 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.logo-title-container img {
+    width: 30px;
+    height: 30px;
+}
+
+#_hr {
+    height: 10px;
+    border: none;
+    margin: 0 15px;
+    background: #f3b94e;
+}
+
+.form-container {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px 50px;
+}
+
+.form-container form {
+    flex: 1 1 300px;
+    background: #fff;
+    border: 2px solid #18cbeb;
+    box-shadow: -2px -2px 2px 1px #cfcece;
+    text-align: center;
+    padding: 30px 50px;
+    border-radius: 8px;
+}
+
+.form-container form .input-label {
+    font-size: 18px;
+}
+
+.form-container form .input-control {
+    width: 60%;
+    border-radius: none;
+    border: 1px solid #18cbeb;
+    font-size: 20px;
+    color: black;
+    text-transform: none;
+    padding: 3px;
+}
+
+.form-container form .gender {
+    color: #18cbeb;
+    padding: 6px 78px;
+    display: flex;
+    border-color: #18cbeb;
+}
+
+.form-container form .race {
+    color: #18cbeb;
+    padding: 6px 73px;
+    display: flex;
+    border-color: #18cbeb;
+}
+
+.form-container form .mb-3 {
+    margin: 20px 0;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.form-container form .mb-3 i {
+    color: #fc0202;
+    display: none;
+}
+
+
+
+
+.form-container form .btn-submit {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 5px 20px;
+    border: 2px solid #18cbeb;
+    border-radius: 8px;
+    box-shadow: -2px -2px 1px 1px #cfcece;
+    color: #18cbeb;
+    cursor: pointer;
+    font-size: 20px;
+    background: #fff;
+    transition: 0.5s;
+}
+
+.form-container form .btn-submit:hover {
+    color: #fff;
+    background: #18cbeb;
+    transform: translateY(2px);
+}
+
+.form-container .images{
+    flex: 1 1 300px;
+}
+
+.form-container .images img {
+    box-shadow: 0px 2px 2px 1px #cfcece;
+    width: 100%;
+}
+
+
+
+/* ckd-container section */
+.ckd-container {
+    padding: 40px 50px;
+}
+
+.ckd-container .ckd {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.ckd-container .ckd .heading h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.ckd-container .ckd .heading p {
+    margin: 10px;
+    font-size: 18px;
+}
+
+.ckd-container .ckd .heading ul {
+    margin-left: 40px;
+    font-size: 17px;
+    
+}
+
+.ckd-container .ckd .heading a {
+    color: #440e23;
+    text-decoration: none;
+    transition: 0.5s;
+    border: none;
+}
+
+.ckd-container .ckd .heading a:hover {
+    border-bottom: 1px solid #f3b94e;
+}
+
+#_hr_ {
+    height: 10px;
+    border: none;
+    background: #f3b94e;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 635px) {
+    .form-container form .gender {
+        padding: 6px 49px;
+    }
+
+    .form-container form .race {
+        padding: 6px 43px;
+    }
+
+}
+
+@media only screen and (max-width: 535px) {
+    .form-container form .gender {
+        padding: 6px 29px;
+    }
+
+    .form-container form .race {
+        padding: 6px 23px;
+    }
+
+}
+
+@media only screen and (max-width: 450px) {
+    .form-container form {
+        padding: 20px 20px;
+    }
+
+    .form-container form .input-label {
+        font-size: 15px;
+    }
+
+    .form-container form .gender {
+        padding: 3px 0;
+    }
+
+    .form-container form .race {
+        padding: 3px 0;
+    }
+    .form-container form .input-control {
+        font-size: 15px;
+    }
+
+    .form-container form .btn-submit {
+        padding: 3px 13px;
+    }
+
+    .form-container {
+        padding: 20px 10px;
+    }
+}

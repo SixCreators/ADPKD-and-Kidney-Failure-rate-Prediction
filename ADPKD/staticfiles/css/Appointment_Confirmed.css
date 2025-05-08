@@ -1,0 +1,50 @@
+body {
+    background-color: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.success-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+}
+.checkmark {
+    font-size: 50px;
+    color: #28a745;
+    animation: pop 0.5s ease-in-out;
+}
+@keyframes pop {
+    0% { transform: scale(0.5); }
+    100% { transform: scale(1); }
+}
+.decorative-box {
+    width: 80px;
+    height: 80px;
+    background-color: #28a745;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    color: white;
+    margin: 20px auto;
+}
+.home-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.home-link:hover {
+    background-color: #0056b3;
+}

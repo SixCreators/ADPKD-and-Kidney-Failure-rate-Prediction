@@ -1,0 +1,336 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", Arial, sans-serif;
+} 
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.about {
+    width: 100%;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ebfeff;
+}
+
+.about .main img {
+    width: 560px;
+    max-width: 100%;
+    height: auto;
+    padding: 0 10px;
+}
+
+.all-text {
+    width: 580px;
+    max-width: 100%;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.main {
+    width: 1260px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+    align-items:center;
+}
+
+._h4_ {
+    font-size:40px;
+    padding: 30px 0 0 0;
+    color:#427474;
+    letter-spacing: 1px;
+    font-weight:600;  
+}
+
+.all-text h1 {
+    color: #5e997a;
+    font-size: 30px;
+}
+
+.all-text p {
+    font-size: 17px;
+}
+
+.about-btn {
+    display: flex;
+    gap: 20px;
+}
+
+.about-btn button {
+    color: #fff;
+    padding: 8px 25px;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    background-color: #089773;
+    transition: all 0.3s ease;
+}
+
+.about-btn button:hover {
+    color: aqua;
+    background-color: #0f635e;
+    transform: translateY(2px);
+}
+
+/* our focus ssection */
+
+.our-focus{
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    padding: 30px 0 50px;
+    font-size: 18px;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ebfeff;
+}
+
+.focus-text {
+    width: 1100px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 90%;
+}
+
+.focus-text p {
+    font-size: 16px;
+}
+.focus-text ._b_ {
+    font-size: 17px;
+    text-transform: uppercase;
+}
+
+.focus-text .text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/* Team details section */
+.team-section {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    padding: 50px 30px;
+    justify-content: center;
+    align-items: center;    
+    flex-wrap: wrap;
+    min-height: 80vh;
+    background-color: #222;
+}
+
+.team-details {
+    width: 300px;
+    height: 300px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    position: relative;
+}
+
+.team-details .icon {
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.team-details .icon .img-box {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: 0.5s;
+    border: 1px solid #fff;
+    box-shadow: 0 0 0 2px #222,
+    0 0 0 4px #fff;
+    transform: rotate(calc(360deg/6 * var(--i)));
+    transform-origin: 174px;
+    z-index: 100;
+    overflow: hidden;
+    position: absolute;
+}
+
+.team-details .icon .img-box.active {
+    box-shadow: 0 0 0 2px #222,
+    0 0 0 6px #ff1d50;
+}
+
+.team-details .icon .img-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    transform: rotate(calc(-360deg/6 * var(--i)));
+    transition: 0.5s;
+    filter: grayscale(1);
+}
+
+.team-details .icon .img-box.active img {
+    filter: grayscale(0);
+}
+
+.team-content {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.team-content::before {
+    content: '';
+    position: absolute;
+    inset: 32px;
+    border: 2px solid transparent;
+    border-left: 2px solid #03f5fd;
+    border-right: 2px solid #fff;
+    border-radius: 50%;
+    animation: animate_01 5s linear infinite;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes animate_01 {
+    0% {
+        rotate: 0deg;
+    }
+    100% {
+        rotate: 360deg;
+    }
+}
+
+.team-content::after {
+    content: '';
+    position: absolute;
+    inset: 45px;
+    border: 2px solid transparent;
+    border-left: 2px solid #ff1d50;
+    border-right: 2px solid #fff;
+    border-radius: 50%;
+    animation: animate_02 2.5s linear infinite;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes animate_02 {
+    0% {
+        rotate: 360deg;
+    }
+    100% {
+        rotate: 0deg;
+    }
+}
+
+.team-content .imgBX {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-content .imgBX img {
+    width: 45%;
+    height: 45%;
+    border-radius: 15px;
+    border: 2px solid #1dddff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+}
+
+.team-member-content {
+    color: #fff;
+    width: 650px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.memberBx {
+    position: absolute;
+}
+
+.team-member-content .memberBx h2 {
+    color: #ff1d50;
+    font-size: 40px;
+    display: flex;
+    padding: 20px 0;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.team-member-content .memberBx h2 span {
+    color: #03f5fd;
+    font-size: 20px;
+    
+}
+
+
+.team-member-content .memberBx i {
+    padding: 20px 5px;
+    font-size: 30px;
+    color: #03d1af;
+}
+
+
+/* member photos */
+.members {
+    display: none;
+}
+@media only screen and (max-width: 1089px) {
+    .team-section{
+        min-height: 150vh;
+        gap: 70px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .team-section{
+        min-height: 130vh;
+        gap: 0;
+    }
+    
+    .team-details {
+        width: 230px;
+        height: 230px;
+        border: 2px solid #fff;
+        
+    }
+
+    .team-details .icon .img-box {
+        transform-origin: 140px;
+    }
+
+}
+
+@media only screen and (max-width: 400px) {
+    .team-section{
+        min-height: 170vh;
+        gap: 0;
+    }
+}

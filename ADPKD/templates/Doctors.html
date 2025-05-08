@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatibal" content="IE=edge">
+    <link rel="shortcut icon" type="x-icon" href="{% static 'IMG/Title_img/title_img.png' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Care Kidney Doctors</title>
+    <link rel="stylesheet" href="{% static 'css/Doctors.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+{% include 'header.html' %}
+<br><br>
+<body>
+    <section class="doctors" id="doctors">
+        <h1 class="heading">Our <span>Doctor's</span> <hr></h1>
+        <div class="box-container">
+            {% for doctor in doctors %}
+            <div class="box">
+                <img src="{{ doctor.Doctors_images.url }}" alt="{{ doctor.Name }}">
+                <h3><a href="{{ doctor.Dr_websiteLink }}">{{ doctor.Name }}</a></h3>
+                <span>{{ doctor.occupation }}</span>
+                <!-- Location section -->
+                <div class="location">
+                    <i class="bx bx-map"></i>
+                    <p>{{ doctor.Location }}</p>
+                </div>
+                <!-- Book Now button -->
+                <a href="{{ doctor.Dr_websiteLink }}">
+                    <div class="contact-btn">
+                        <i class="bx bx-phone"></i>
+                        <p>{{ doctor.Paragraph }}</p>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+
+    <section class="book" id="book">
+
+        <h1 class="heading"> <span>Book</span> Now <hr></h1>
+
+        <div class="row">
+
+            <div class="image">
+                {% for dr_ap_img in dr_appointment_img %}
+                <img src="{{dr_ap_img.Dr_Ap_img.url}}" alt="#">
+                {% endfor %}
+            </div>
+            <form action="" method="post">
+                {% csrf_token %}
+                <h3>Book Appointment</h3>
+                <input type="text" name="name" placeholder="Your Name" class="box" required>
+                <input type="text" name="phone_number" placeholder="Your Number" class="box" required>
+                <input type="email" name="email" placeholder="Your E-mail" class="box">
+                <input type="text" name="location" placeholder="Your Location" class="box" required>
+                <input type="date" name="appointment_date" class="box" required>
+                <input type="submit" value="Book Now" class="btn">
+            </form>
+
+        </div>
+
+    </section>
+    
+    <script src="{% static 'js/Doctors.js' %}"></script>
+    {% include 'footer.html' %}
+</body>
+</html>

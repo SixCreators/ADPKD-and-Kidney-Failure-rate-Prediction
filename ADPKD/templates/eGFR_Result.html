@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="{% static 'img/Title_Img/title_img.png' %}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eGFR Result</title>
+    <link rel="stylesheet" href="{% static 'css/eGFR_Result.css' %}">
+</head>
+{% include 'header.html' %}
+<br><br>
+<body>
+    <div class="headline">
+        <img src="{% static 'img/Gfr_Result_img/GFR_Shape_img.png' %}" alt="#">
+        <h1>eGFR Result</h1>
+    </div>
+    <hr class="_hr_">
+    <div class="result-container">
+        <div class="gfr-result">
+            <div class="result-stage_img">
+                <div class="result-kidney-stage">
+                    <h2>{{ kidney_stage_obj.stage_name }}</h2>
+                </div>
+                <div class="result-kidney-img"style="background-color: {{ bg_color }};">
+                    {% if kidney_image %}
+                        <img class="stage-img" src="{{ kidney_image }}" alt="{{ kidney_stage_obj.stage_name }}">
+                    {% endif %}
+                </div>
+            </div>
+            <div class="kidney-condition"style="background-color: {{ bg_color }};">
+                <p>{{ condition }}</p>
+            </div>
+            <div class="result-value">
+                <p class="gfr-value-text">eGFR Value : </p>
+                <p class="gfr-value">{{ result }}</p>
+                <p>(mL/min)</p>
+            </div>
+            <div class="circle-bar-container">
+                <div class="circle-bar one">
+                    <div class="circle one">
+                        <p class="number">DEBUG: {{ gfr_percentage }}<span>%</span></p>
+                    </div>
+                    <h3>Glomerular <br>Filtration Rate</h3>
+                </div>
+                <div class="circle-bar two">
+                    <div class="circle2 two">
+                        <p class="number">{{ gfr_percentage|default:"0" }}<span>%</span></p>
+                    </div>
+                    <h3>Serum <br>Creatinine</h3>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="result-line-chart" style="float: right; ">
+            <div id="chartContainer" style="height: 400px; width: 100%;"></div>
+        </div>
+    </div>
+    <hr>
+    <div class="Stage-content">
+        {% for stage in DKS %}
+        <div class="Stage-content-{{ stage.stage_number }} SC-Box">
+            <h4>{{ stage.stage_name }}</h4>
+            <a href="{{ stage.reference_link }}"><img class="one" src="{{ stage.DKS_img.url }}" alt="Stage - 1"></a>
+            <div class="k-condition">
+                <p>{{ stage.KD_condition }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <!-- Hidden JSON Data for Chart -->
+<script id="chartData" type="application/json">{{ chart_data|safe }}</script>
+<script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+<script src="{% static 'js/eGFR_Result.js' %}"></script>
+<script>
+    var GfrValue = {{ gfr_percentage|default:0 }};
+    var serumCreatininePercentage = {{ gfr_percentage|default:0 }};
+</script>
+{% include 'footer.html' %}
+</body>
+</html>

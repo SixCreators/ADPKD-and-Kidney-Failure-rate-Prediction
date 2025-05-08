@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/terms_conditions_custom.css' %}">
+</head>
+<body>
+    <!-- Terms & Conditions Section -->
+    <section class="terms-wrapper py-5">
+        <div class="container">
+            <div class="terms-card p-5 shadow-lg bg-white rounded">
+                <h2 class="terms-title text-center text-primary fw-bold">Terms & Conditions</h2>
+                <p class="terms-updated text-center text-muted">Last Updated: {{ terms.first.updated_at|date:"F d, Y" }}</p>
+                <div class="terms-content">
+                    {% for term in terms %}
+                        <div class="term-section rounded p-4 border-start border-primary border-3 mb-4 bg-light">
+                            <h4 class="term-title text-dark fw-semibold">{{ term.title }}</h4>
+                            {% if term.content %}
+                                <p class="term-text text-secondary">{{ term.content|safe }}</p>
+                            {% else %}
+                                <p class="term-text text-danger">No information available.</p>
+                            {% endif %}
+                        </div>
+                    {% empty %}
+                        <p class="no-terms text-center text-warning fw-bold">No terms and conditions available.</p>
+                    {% endfor %}
+                </div>
+                <div class="text-center mt-4">
+                    <a href="javascript:history.back()" class="btn btn-outline-primary">Go Back</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

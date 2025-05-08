@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+        .email-container {
+            max-width: 500px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: auto;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            color: #555;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="email-container">
+        <h2>✅ Appointment Confirmed</h2>
+        <p>Dear {{ name }},</p>
+        <p>Your appointment has been successfully scheduled.</p>
+        <p><strong>Date:</strong> {{ appointment_date }}</p>
+        <p><strong>Location:</strong> {{ location }}</p>
+        <p>We look forward to seeing you!</p>
+        <div class="footer">If you have any questions, contact us at Unknown.person.india.wb@gmail.com</div>
+    </div>
+
+</body>
+</html>

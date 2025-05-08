@@ -1,0 +1,92 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #eef2f7;
+    color: #333;
+}
+
+/* Terms Section */
+.terms-wrapper {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+.terms-card {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
+}
+.terms-card:hover {
+    transform: translateY(-5px);
+}
+
+.terms-title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #0d6efd;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.terms-updated {
+    font-size: 14px;
+    color: #6c757d;
+    margin-bottom: 25px;
+}
+
+/* Term Sections */
+.term-section {
+    border-left: 5px solid #0d6efd;
+    padding: 20px;
+    margin-bottom: 25px;
+    background: #f8f9fc;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+.term-section:hover {
+    background: #e2e6f0;
+    border-left-color: #0056b3;
+}
+
+.term-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.term-text {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #444;
+}
+
+.term-note {
+    font-size: 15px;
+    color: #dc3545;
+    font-weight: 600;
+}
+
+/* No Terms Message */
+.no-terms {
+    font-size: 20px;
+    color: #888;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+/* Back Button */
+.text-center .btn {
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+.text-center .btn:hover {
+    background-color: #0a58ca;
+    color: #fff;
+}
