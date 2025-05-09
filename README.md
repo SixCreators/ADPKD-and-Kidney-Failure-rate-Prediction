@@ -25,7 +25,7 @@
 # Developer Section
 ![image alt](https://github.com/SixCreators/ADPKD-through-Kidney-Failure-rate-Prediction/blob/b98bf33827873aad76ac3c95a609644610f80fac/img/kartik.png)
 ![image alt](https://github.com/SixCreators/ADPKD-through-Kidney-Failure-rate-Prediction/blob/b98bf33827873aad76ac3c95a609644610f80fac/img/babai.png)
-![image alt]()
+![image alt](https://github.com/SixCreators/ADPKD-through-Kidney-Failure-rate-Prediction/blob/e7d190e27501e456ace0b23fe2223dac451e7798/img/ritwik.png)
 ![image alt](https://github.com/SixCreators/ADPKD-through-Kidney-Failure-rate-Prediction/blob/b98bf33827873aad76ac3c95a609644610f80fac/img/rajdeep.png)
 ![image alt](https://github.com/SixCreators/ADPKD-through-Kidney-Failure-rate-Prediction/blob/b98bf33827873aad76ac3c95a609644610f80fac/img/anupam.png)
 ![image alt](https://github.com/SixCreators/ADPKD-through-Kidney-Failure-rate-Prediction/blob/b98bf33827873aad76ac3c95a609644610f80fac/img/apu.png)
