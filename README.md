@@ -32,6 +32,6 @@
 
 # Contributors
 <a href="https://github.com/Learner-cbse/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Learner-cbse/python_test" />
+  <img src="https://contrib.rocks/image?repo=Learner-cbse" />
 </a>
 
