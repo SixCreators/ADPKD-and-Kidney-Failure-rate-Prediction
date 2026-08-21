@@ -31,8 +31,20 @@
 ![image alt](https://github.com/SixCreators/ADPKD-through-Kidney-Failure-rate-Prediction/blob/b98bf33827873aad76ac3c95a609644610f80fac/img/apu.png)
 
 # Contributors
-<a href="https://github.com/Learner-cbse/ADPKD/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Learner-cbse/ADPKD" />
+<a href="https://github.com">
+  <img src="https://contrib.rocks" />
+</a>
+<a href="https://github.com">
+  <img src="https://contrib.rocks" />
+</a>
+<a href="https://github.com">
+  <img src="https://contrib.rocks" />
+</a>
+<a href="https://github.com">
+  <img src="https://contrib.rocks" />
+</a>
+<a href="https://github.com">
+  <img src="https://contrib.rocks" />
 </a>
 <a href="https://github.com">
   <img src="https://contrib.rocks" />
